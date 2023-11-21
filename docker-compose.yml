@@ -6,7 +6,7 @@ services:
       context: ./Products
       dockerfile: Dockerfile
     ports:
-      - "8000:80"
+      - "7231:7231"
     environment:
       - ConnectionStrings__DefaultConnection=Server=db;Database=Products;User Id=ssu;Password=ssu;
     depends_on:
