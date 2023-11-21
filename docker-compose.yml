@@ -12,7 +12,7 @@ services:
   webapi:
     image: products-api
     build:
-      context: .
+      context: ./Products
       dockerfile: Dockerfile
     ports:
       - "8000:80"
