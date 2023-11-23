@@ -6,8 +6,8 @@ services:
       context: ./Products
       dockerfile: Dockerfile
     ports:
-      - "8000:80" 
-      - "44300:443" 
+      - "8000:80"
+      - "44300:443"
     environment:
       - ConnectionStrings__DefaultConnection=Server=db;Database=Products;User Id=sa;Password=NewStrongP@ssw0rd;TrustServerCertificate=True;
     depends_on:
@@ -20,6 +20,8 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
-
+    volumes:
+      - sql_data:/var/opt/mssql
+- 
 volumes:
   sql_data:
