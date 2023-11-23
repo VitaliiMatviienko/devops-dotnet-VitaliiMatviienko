@@ -9,7 +9,7 @@ services:
       - "8000:80" 
       - "44300:443" 
     environment:
-      - ConnectionStrings__DefaultConnection=Server=db;Database=Products;User Id=ssu;Password=ssu;
+      - ConnectionStrings__DefaultConnection=Server=db;Database=Products;User Id=SA;Password=NewStrongP@ssw0rd;
     depends_on:
       - db
 
