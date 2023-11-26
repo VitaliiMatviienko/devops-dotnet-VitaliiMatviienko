@@ -19,3 +19,14 @@ jobs:
         run: dotnet build Products.sln --no-restore
       - name: Test
         run: dotnet test Products.sln --no-build
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Automated commit" -a || echo "No changes to commit"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
