@@ -1,8 +1,6 @@
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   push:
-    branches:
-      - develop
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
