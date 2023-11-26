@@ -1,13 +1,15 @@
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   push:
+  pull_request:
+    types: [opened, synchronize]
   workflow_dispatch:
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup .NET Core
+      - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '3.1'
