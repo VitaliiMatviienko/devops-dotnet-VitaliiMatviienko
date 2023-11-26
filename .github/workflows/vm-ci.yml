@@ -16,6 +16,6 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore Products.sln
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build Products.sln --no-restore
       - name: Test
-        run: dotnet test --no-build
+        run: dotnet test Products.sln --no-build
