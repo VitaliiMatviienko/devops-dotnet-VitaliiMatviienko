@@ -1,6 +1,8 @@
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   push:
+    branches:
+      - develop
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
@@ -29,4 +31,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
+          branch: 'develop'
